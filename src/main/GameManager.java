@@ -103,8 +103,9 @@ public class GameManager {
         Inventory.pokemons.sort(Comparator.comparing(Pokemon::getRate).reversed());
         StringBuilder inventory = new StringBuilder();
         inventory.append("--- Deine gesammelten Pokemons ---\n");
+        SimpleDateFormat simpleDateFormat =  new SimpleDateFormat("dd.MM.yyyy HH:mm");
         for (Pokemon pokemon : Inventory.pokemons) {
-            String date = new SimpleDateFormat("dd.MM.yyyy HH:mm").format(pokemon.getTimestamp());
+            String date = simpleDateFormat.format(pokemon.getTimestamp());
             inventory.append(pokemon.getName())
                     .append(" - Rate: ")
                     .append(pokemon.getRate())

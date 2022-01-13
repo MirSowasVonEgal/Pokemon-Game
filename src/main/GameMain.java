@@ -1,8 +1,5 @@
 package main;
 
-import java.io.File;
-import java.util.Scanner;
-
 public class GameMain {
 
     private static GameManager gameManager;
@@ -13,7 +10,7 @@ public class GameMain {
         gameManager.loadSavedGame();
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             gameManager.saveGame();
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 30; i++) {
                 System.out.println(" ");
             }
             System.out.println("Deine Spieldaten wurden gespeichert.");

@@ -71,10 +71,11 @@ public class Pokemon implements Serializable {
         this.rareness = rareness;
         this.element = element;
         this.hp = hp;
-        setTimestamp(System.currentTimeMillis());
+        this.timestamp = System.currentTimeMillis();
     }
 
     public boolean catchPokemon() {
+        this.timestamp = System.currentTimeMillis();
         int random = new Random().nextInt(100)+1;
         if(random <= this.rate) {
             Inventory.pokemons.add(this);
